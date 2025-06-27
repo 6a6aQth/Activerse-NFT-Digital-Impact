@@ -145,9 +145,14 @@ export function Community() {
       <section className="py-16 bg-emerald-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-6">Be a part of Malawi's journey toward sustainability</h2>
-          <button className="px-8 py-3 bg-white text-emerald-900 rounded-full font-semibold hover:bg-gray-100 transition">
+          <a 
+            href="https://discord.com/invite/michaelslumanga"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-8 py-3 bg-white text-emerald-900 rounded-full font-semibold hover:bg-gray-100 transition"
+          >
             Join the Movement
-          </button>
+          </a>
         </div>
       </section>
     </main>

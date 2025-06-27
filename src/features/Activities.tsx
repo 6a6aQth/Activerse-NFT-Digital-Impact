@@ -9,7 +9,6 @@ interface Activity {
   deadline: string;
   sdg: string;
   organization: string;
-  status: 'open' | 'completed';
   viewMoreLink?: string;
 }
 
@@ -24,7 +23,6 @@ export function Activities() {
       deadline: '2024-04-30',
       sdg: 'SDG 11: Sustainable Cities and Communities',
       organization: 'Green Earth',
-      status: 'open',
       viewMoreLink: 'https://www.greenearthpressmalawi.com/'
     },
     {
@@ -35,8 +33,7 @@ export function Activities() {
       deadline: '2024-05-15',
       sdg: 'SDG 3: Good Health and Well-being',
       organization: 'Red Cross',
-      status: 'open',
-      viewMoreLink: 'https://www.redcross.mw/'
+      viewMoreLink: 'https://www.redcross.mw/news'
     },
     {
       id: '3',
@@ -46,7 +43,6 @@ export function Activities() {
       deadline: '2025-07-29',
       sdg: 'SDG 4: Quality Education',
       organization: 'Teach For All',
-      status: 'open',
       viewMoreLink: 'https://web.facebook.com/people/Teach-For-Malawi/100085267377142/'
     }
   ]);
@@ -67,7 +63,7 @@ export function Activities() {
       <div className="space-y-6">
         {activities.map((activity) => (
           <div key={activity.id} className="bg-white rounded-lg shadow-md p-6">
-            <div className="flex justify-between items-start">
+            <div>
               <div>
                 <h3 className="text-xl font-semibold mb-2">{activity.title}</h3>
                 <p className="text-gray-600 mb-4">{activity.description}</p>
@@ -78,12 +74,8 @@ export function Activities() {
                   <p><span className="font-medium">Organization:</span> {activity.organization}</p>
                 </div>
               </div>
-              <div className="mt-4 flex items-center justify-between">
-                <span className={`inline-flex items-center rounded-full px-2 py-1 text-xs ${
-                  activity.status === 'open' ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-700'
-                }`}>
-                  {activity.status}
-                </span>
+              <div className="mt-4 flex justify-end">
+                
                 {activity.viewMoreLink && (
                   <a
                     href={activity.viewMoreLink}
